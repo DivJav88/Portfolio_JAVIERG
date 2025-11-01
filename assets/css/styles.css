@@ -1,0 +1,74 @@
+:root{
+    --blue:#0055FF; --teal:#00C4B3; --bg:#F7F9FC; --text:#1A1A1A; --accent:#FFD166;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0;font-family:"Lato",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text);background:var(--bg);}
+  h1,h2,h3{font-family:"Poppins",sans-serif;line-height:1.2;margin:0 0 .5rem}
+  p{line-height:1.7;margin:.25rem 0 1rem}
+  .container{width:min(1100px,92%);margin:auto}
+  .section{padding:72px 0}
+  .section.alt{background:#fff}
+  .btn{display:inline-block;padding:.85rem 1.15rem;border-radius:14px;border:0;background:var(--blue);color:#fff;text-decoration:none;font-weight:600;box-shadow:0 6px 20px rgba(0,85,255,.18);transition:transform .2s,box-shadow .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,85,255,.22)}
+  .btn.outline{background:transparent;color:var(--blue);border:2px solid var(--blue);box-shadow:none}
+  .btn-sm{padding:.55rem .85rem;border-radius:12px}
+  .site-header{position:sticky;top:0;z-index:50;background:rgba(247,249,252,.8);backdrop-filter:blur(10px);border-bottom:1px solid #e6eef7}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem 0}
+  .brand{font-weight:700;text-decoration:none;color:var(--text)}
+  .nav{display:flex;gap:1rem;align-items:center}
+  .nav a{color:var(--text);text-decoration:none;padding:.4rem .6rem;border-radius:10px}
+  .nav a:hover{background:#eef3ff}
+  .hamburger{display:none}
+  .lang-switch{display:flex;gap:.4rem}
+  .lang-btn{border:1px solid #e5eaf3;background:#fff;border-radius:10px;padding:.35rem .55rem;cursor:pointer}
+  
+  .grid-2{display:grid;grid-template-columns:1.1fr .9fr;gap:2rem;align-items:center}
+  .hero{padding-top:96px}
+  .hero .subtitle{font-weight:700;color:var(--blue)}
+  .hero .lead{font-size:1.05rem}
+  .hero .cta-group{display:flex;gap:.8rem;margin-top:1rem}
+  .highlight{background:linear-gradient(120deg,var(--blue),var(--teal));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .hero-visual{position:relative;display:grid;place-items:center}
+  .ai-orbit{position:absolute;inset:0;display:grid;place-items:center}
+  .ai-orbit .dot{position:absolute;width:8px;height:8px;border-radius:999px;background:var(--teal);animation:orbit 6s linear infinite}
+  .ai-orbit .dot:nth-child(2){animation-duration:8s;background:var(--blue)}
+  .ai-orbit .dot:nth-child(3){animation-duration:10s;background:var(--accent)}
+  @keyframes orbit{from{transform:rotate(0) translateX(120px) rotate(0)}to{transform:rotate(360deg) translateX(120px) rotate(-360deg)}}
+  
+  .cards{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
+  .card{background:#fff;border:1px solid #e8eef7;border-radius:16px;padding:1rem;box-shadow:0 4px 14px rgba(0,0,0,.04)}
+  
+  .projects-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+  .project-card{background:#fff;border:1px solid #e8eef7;border-radius:16px;padding:1rem}
+  .project-card .stack{font-size:.9rem;color:#4c576a}
+  
+  .skills{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  .skill{display:flex;align-items:center;gap:.8rem}
+  .skill .bar{flex:1;height:10px;background:#eef3ff;border-radius:999px;position:relative;overflow:hidden}
+  .skill .bar::after{content:"";position:absolute;inset:0;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--blue),var(--teal));transition:transform 1s ease}
+  .skill.visible .bar::after{transform:scaleX(var(--level, .8))}
+  
+  .impact{display:grid;gap:.5rem}
+  .contact-links{list-style:none;padding:0;margin:1rem 0;display:grid;gap:.35rem}
+  
+  .site-footer{border-top:1px solid #e6eef7;background:#fff}
+  .site-footer .container{padding:1rem 0}
+  
+  /* Animaciones */
+  .fade-in{opacity:0;transform:translateY(12px);transition:opacity .6s ease,transform .6s ease}
+  .fade-in.appear{opacity:1;transform:none}
+  .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}
+  
+  /* Responsive */
+  @media (max-width: 1024px){
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .projects-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width: 720px){
+    .grid-2{grid-template-columns:1fr}
+    .nav{display:none;position:absolute;right:1rem;top:60px;background:#fff;border:1px solid #e6eef7;border-radius:14px;padding:.6rem;flex-direction:column}
+    .hamburger{display:block;border:0;background:#fff;border:1px solid #e6eef7;border-radius:10px;padding:.35rem .55rem}
+    .cards{grid-template-columns:1fr}
+    .projects-grid{grid-template-columns:1fr}
+  }
+  
